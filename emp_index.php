@@ -48,52 +48,48 @@ error_reporting(0);
             </div>
 
             <ul class="nav">
-                <li <?php if($_GET['menu']=='profile'){ echo 'class="active" '; } ?>>
-                    <a  href="admin_index.php?menu=profile">
+                <li <?php if($_GET['menu']=='cus'){ echo 'class="active" '; } ?>>
+                    <a  href="emp_index.php?menu=cus">
+                        <i class="pe-7s-user"></i>
+                        <p>ข้อมูลลูกค้า</p>
+                    </a>
+                </li>
+                <li  <?php if($_GET['menu']=='his'){ echo 'class="active"'; } ?>>
+                    <a href="emp_index.php?menu=his">
                         <i class="pe-7s-graph"></i>
-                        <p>ข้อมูลส่วนตัว</p>
+                        <p>ประวัติการเข้ารักษา</p>
                     </a>
                 </li>
-                <li  <?php if($_GET['menu']=='emp'){ echo 'class="active"'; } ?>>
-                    <a href="admin_index.php?menu=emp">
-                        <i class="pe-7s-user"></i>
-                        <p>ข้อมูลพนักงาน</p>
-                    </a>
-                </li>
-                <li <?php if($_GET['menu']=='pos'){ echo 'class="active"'; } ?>>
-                    <a href="admin_index.php?menu=pos">
-                        <i class="pe-7s-user"></i>
-                        <p>ข้อมูลตำแหน่ง</p>
-                    </a>
-                </li>
-                <li <?php if($_GET['menu']=='income'){ echo 'class="active"'; } ?>>
-                    <a  href="admin_index.php?menu=income">
+                <li <?php if($_GET['menu']=='acc'){ echo 'class="active"'; } ?>>
+                    <a href="emp_index.php?menu=acc">
                         <i class="pe-7s-note2"></i>
-                        <p>ข้อมูลรายรับรายจ่าย</p>
+                        <p>ข้อมูลบัญชี</p>
                     </a>
                 </li>
-                <li <?php if($_GET['menu']=='bank'){ echo 'class="active"'; } ?>>
-                    <a href="admin_index.php?menu=bank">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>ข้อมูลธนาคาร</p>
+
+                <li <?php if($_GET['menu']=='pre'){ echo 'class="active" '; } ?>>
+                    <a  href="emp_index.php?menu=pre">
+                        <i class="pe-7s-user"></i>
+                        <p>คำนำหน้าชื่อ</p>
                     </a>
                 </li>
-                <li <?php if($_GET['menu']=='type_bank'){ echo 'class="active"'; } ?>>
-                    <a href="admin_index.php?menu=type_bank">
-                        <i class="pe-7s-science"></i>
-                        <p>ข้อมูลประเภทบัญชี</p>
-                    </a>
-                </li>
-                <li <?php if($_GET['menu']=='quit'){ echo 'class="active"'; } ?>>
-                    <a href="admin_index.php?menu=quit">
+
+                <li <?php if($_GET['menu']=='list'){ echo 'class="active"'; } ?>>
+                    <a href="emp_index.php?menu=list">
                         <i class="pe-7s-map-marker"></i>
-                        <p>ข้อมูลพนักงานที่ลาออก</p>
+                        <p>รายการที่ทำการรักษา</p>
                     </a>
                 </li>
-                <li <?php if($_GET['menu']=='use'){ echo 'class="active"'; } ?>>
-                    <a href="admin_index.php?menu=use">
-                        <i class="pe-7s-bell"></i>
-                        <p>สิทธิ์การใช้งาน</p>
+                <li <?php if($_GET['menu']=='ser'){ echo 'class="active"'; } ?>>
+                    <a href="emp_index.php?menu=ser">
+                        <i class="pe-7s-science"></i>
+                        <p>ข้อมูลการบริการ</p>
+                    </a>
+                </li>
+                <li <?php if($_GET['menu']=='report'){ echo 'class="active"'; } ?>>
+                    <a href="emp_index.php?menu=report">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>รายงานใบเสร็จ</p>
                     </a>
                 </li>
 				
@@ -134,22 +130,20 @@ error_reporting(0);
                 <div class="row">
                 </div>
 <?php
-if($_GET['menu']=='profile'){
-    include('admin_show_profile.php');
-}else if($_GET['menu']=='emp'){
-    include('admin_show_emp.php');
-}else if($_GET['menu']=='pos'){
-    include('admin_show_pos.php');
-}else if($_GET['menu']=='income'){
-    include('admin_show_income.php');
-}else if($_GET['menu']=='bank'){
-    include('admin_show_bank.php');
-}else if($_GET['menu']=='type_bank'){
-    include('admin_show_type_bank.php');
-}else if($_GET['menu']=='quit'){
-    include('admin_show_quit.php');
-}else if($_GET['menu']=='use'){
-    include('admin_show_use.php');
+if($_GET['menu']=='cus'){
+    include('emp_show_customer.php');
+}else if($_GET['menu']=='his'){
+    include('emp_show_history.php');
+}else if($_GET['menu']=='acc'){
+    include('emp_show_accounting.php');
+}else if($_GET['menu']=='pre'){
+    include('emp_show_prefix.php');
+}else if($_GET['menu']=='list'){
+    include('emp_show_list_treat.php');
+}else if($_GET['menu']=='ser'){
+    include('emp_show_service.php');
+}else if($_GET['menu']=='report'){
+    include('emp_show_report.php');
 }
 ?>
                         </div>
