@@ -96,6 +96,12 @@ error_reporting(0);
                         <p>สิทธิ์การใช้งาน</p>
                     </a>
                 </li>
+                 <li <?php if($_GET['menu']=='wb'){ echo 'class="active"'; } ?>>
+                    <a href="admin_index.php?menu=wb">
+                        <i class="pe-7s-bell"></i>
+                        <p>กระทู้</p>
+                    </a>
+                </li>
 				
             </ul>
     	</div>
@@ -150,6 +156,10 @@ if($_GET['menu']=='profile'){
     include('admin_show_quit.php');
 }else if($_GET['menu']=='use'){
     include('admin_show_use.php');
+}else if($_GET['menu']=='wb'){
+    include('admin_show_wb.php');
+}else if($_GET['menu']=='view_topic'){
+    include('admin_show_view_topic.php');
 }
 ?>
                         </div>
@@ -178,7 +188,7 @@ if($_GET['menu']=='profile'){
 	<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
 
 	<!--  Charts Plugin -->
-	<script src="assets/js/chartist.min.js"></script>
+	<!-- <script src="assets/js/chartist.min.js"></script> -->
 
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
