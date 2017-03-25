@@ -55,3 +55,4 @@ while($res=mysql_fetch_array($sql)){
       
     </tbody>
   </table>
+  </div>

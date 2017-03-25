@@ -60,10 +60,10 @@ error_reporting(0);
                         <p>ประวัติการเข้ารักษา</p>
                     </a>
                 </li>
-                <li <?php if($_GET['menu']=='acc'){ echo 'class="active"'; } ?>>
-                    <a href="emp_index.php?menu=acc">
+                <li <?php if($_GET['menu']=='type_tr'){ echo 'class="active"'; } ?>>
+                    <a href="emp_index.php?menu=type_tr">
                         <i class="pe-7s-note2"></i>
-                        <p>ข้อมูลบัญชี</p>
+                        <p>ข้อมูลประเภทการรักษา</p>
                     </a>
                 </li>
 
@@ -134,8 +134,8 @@ if($_GET['menu']=='cus'){
     include('emp_show_customer.php');
 }else if($_GET['menu']=='his'){
     include('emp_show_history.php');
-}else if($_GET['menu']=='acc'){
-    include('emp_show_accounting.php');
+}else if($_GET['menu']=='type_tr'){
+    include('emp_show_type_treatment.php');
 }else if($_GET['menu']=='pre'){
     include('emp_show_prefix.php');
 }else if($_GET['menu']=='list'){
