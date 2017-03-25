@@ -124,7 +124,7 @@ error_reporting(0);
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="index.php">
+                            <a href="logout.php">
                                 <p>Log out</p>
                             </a>
                         </li>

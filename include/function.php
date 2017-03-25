@@ -91,27 +91,27 @@ if(mysql_query($sql)){
 
 function Date_Mouth_Shot($str)
   {
-    $strYear = date("Y",strtotime($strDate))+543;
-    $strMonth= date("n",strtotime($strDate));
-    $strDay= date("j",strtotime($strDate));
-    $strHour= date("H",strtotime($strDate));
-    $strMinute= date("i",strtotime($strDate));
-    $strSeconds= date("s",strtotime($strDate));
+    $strYear = date("Y",strtotime($str))+543;
+    $strMonth= date("n",strtotime($str));
+    $strDay= date("j",strtotime($str));
+    $strHour= date("H",strtotime($str));
+    $strMinute= date("i",strtotime($str));
+    $strSeconds= date("s",strtotime($str));
     $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
     $strMonthThai=$strMonthCut[$strMonth];
     return "$strDay $strMonthThai $strYear";
   }
   function Date_Mouth_Shot_Time($str)
   {
-    $strYear = date("Y",strtotime($strDate))+543;
-    $strMonth= date("n",strtotime($strDate));
-    $strDay= date("j",strtotime($strDate));
-    $strHour= date("H",strtotime($strDate));
-    $strMinute= date("i",strtotime($strDate));
-    $strSeconds= date("s",strtotime($strDate));
+    $strYear = date("Y",strtotime($str))+543;
+    $strMonth= date("n",strtotime($str));
+    $strDay= date("j",strtotime($str));
+    $strHour= date("H",strtotime($str));
+    $strMinute= date("i",strtotime($str));
+    $strSeconds= date("s",strtotime($str));
     $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
     $strMonthThai=$strMonthCut[$strMonth];
-    return "$strDay $strMonthThai $strYear,$strHour:$strMinute";
+    return "$strDay $strMonthThai $strYear,$strHour:$strMinute:$strSeconds";
   }
 
  ?>
