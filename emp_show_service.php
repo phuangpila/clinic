@@ -23,7 +23,7 @@ include('include/function.php');
         <th style="text-align:center;">การรักษา</th>
         <th style="text-align:center;">การแพ้ยา</th>
         <th style="text-align:center;">วันที่มารักษา</th>
-        <th style="text-align:center;">วันที่นัด</th>
+        <th style="text-align:center;">วันที่นัด/เวลา </th>
         <th style="text-align:center;">Action</th>
       </tr>
     </thead>
@@ -38,20 +38,48 @@ include('include/function.php');
       <tr>
       		<td><?php echo $i; ?></td>
       		<td><?php echo '00'.$res['id']; ?></td>
-      		<td></td>
+         <?php if ($res['date_treat'] == '0000-00-00 00:00:00') { ?>
+           <td><?php echo '-' ?></td>
+           <?php }else if ($res['date_treat'] != '0000-00-00 00:00:00') { ?>
+                   <td><?php echo $res['rank']; ?></td>
+         <?php } ?> 
       		<td><?php echo $res_u['name']; ?></td>
       		<td><?php echo $res['lose_d']; ?></td>
       		<td><?php echo $res['sick']; ?></td>
+          <?php if ($res['date_appoint'] == '0000-00-00') { ?>
+          <td><?php echo '-'; ?></td>
+          <?php }elseif ($res['date_appoint'] != '0000-00-00') {?>
       		<td><?php echo Date_Mouth_Shot($res['date_appoint']); ?></td>
-      		<td></td>
+          <?php } ?>
+           <?php if ($res['date_app'] == '0000-00-00 00:00:00') { ?>
+          <td><?php echo '-'; ?></td>
+          <?php }elseif ($res['date_app'] != '0000-00-00 00:00:00') {
+            $day = substr($res['date_app'],0,10);
+            $time = substr($res['date_app'],10,9);
+            ?>
+          <td style="color: red;"><?php echo Date_Mouth_Shot($day).'('.$time.')'; ?></td>
+          <?php } ?>
 	        <td align="center">
-	        	<a href="emp_action_service.php?rank=1&idrank=<?php echo $res['id']; ?>" class="btn btn-primary btn-xs" >จัดคิว</a>
+            <?php if ($res['rank'] == '0') {?>
+	        	<a href="emp_action_service.php?ranks=1&idrank=<?php echo $res['id']; ?>" class="btn btn-primary btn-xs" >จัดคิว</a>
+            <?php }elseif ($res['rank'] != '0') { ?>
+            <a href="#" class="btn btn-default btn-xs" disabled>จัดคิว</a>
+            <?php } ?>
 
-	        	<a href="emp_action_type_treatment.php?up=1&idup=<?php echo $res['id']; ?>"   data-toggle="modal"  data-target="#myModalin" class="btn btn-warning btn-xs" >แก้ไข</a>
+           
+	        	<a href="emp_action_service.php?up=1&idup=<?php echo $res['id']; ?>"   data-toggle="modal"  data-target="#myModalin" class="btn btn-warning btn-xs" >แก้ไข</a>
 
-				<a href="emp_action_type_treatment.php?up=1&idup=<?php echo $res['id']; ?>"   data-toggle="modal"  data-target="#myModalin" class="btn btn-success btn-xs" >ค่าใช้จ่าย</a>
+           <?php if ($res['charge_id'] == '0') { ?>
+				    <a href="emp_action_service_row.php?row=1&idup=<?php echo $res['id']; ?>"   data-toggle="modal"  data-target="#myModalin" class="btn btn-success btn-xs" >ค่าใช้จ่าย</a>
+            <?php }elseif ($res['charge_id'] != '0') { ?>
+            <a href="#"   data-toggle="modal"  data-target="#myModalin" class="btn btn-default btn-xs" disabled >ค่าใช้จ่าย</a>
+            <?php } ?>
 
-				<a href="emp_action_type_treatment.php?up=1&idup=<?php echo $res['id']; ?>"   data-toggle="modal"  data-target="#myModalin" class="btn btn-danger btn-xs" >นัดหมาย</a>       
+             <?php if ($res['status_sick'] == '0') { ?>
+				<a href="emp_action_service_appoint.php?appoint=1&idappoint=<?php echo $res['id']; ?>"   data-toggle="modal"  data-target="#myModalin" class="btn btn-danger btn-xs" >นัดหมาย</a> 
+         <?php }elseif ($res['status_sick '] != '0') { ?>
+          <a href="#"   data-toggle="modal"  data-target="#myModalin" class="btn btn-default btn-xs" disabled >นัดหมาย</a>
+         <?php } ?>      
 	        </td>	       
       </tr>
       <?php $i++;} ?>

@@ -113,6 +113,7 @@ function Date_Mouth_Shot($str)
     $strMonthThai=$strMonthCut[$strMonth];
     return "$strDay $strMonthThai $strYear,$strHour:$strMinute:$strSeconds";
   }
+  
 
  ?>
 <script type="text/javascript">
