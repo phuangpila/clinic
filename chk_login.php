@@ -17,17 +17,18 @@ $strSql = "SELECT * FROM user WHERE username='".$user_name."' AND pass_word='".$
 			 $_SESSION["name"] = $row['name'];
 			 $_SESSION["user_name"] = $row['user_name'];
 
-			 if($row['status']=='1'){
-    	header("refresh:0.5; admin_index.php" );
-		exit();
-				}else if($row['status']=='2'){
-			
-    	header("refresh:0.5; emp_index.php" );
-		exit();
-				}else if($row['status']=='3'){
-			
-    	header("refresh:0.5; " );
-		exit();
+		if($row['status']=='1'){
+		    	header("refresh:0.5; admin_index.php" );
+				exit();
+		}else if($row['status']=='2'){
+		    	header("refresh:0.5; doc_index.php" );
+				exit();
+		}else if($row['status']=='3'){
+		    	header("refresh:0.5; emp_index.php" );
+				exit();
+		}else if($row['status']=='4'){
+		    	header("refresh:0.5; user_index.php" );
+				exit();
 				}
 		}else{
 			imgLoading("Username หรือ Password อาจจะผิดกรุณา Login ใหม่อีกครั้ง...");

@@ -4,13 +4,13 @@ error_reporting(0);
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>ซันเวย์คลีนิกทัตกรรม</title>
+	<title>ซันเวย์คลีนิกทัตกรรม</title>
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
 
@@ -39,7 +39,7 @@ error_reporting(0);
     <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
 
 
-        <div class="sidebar-wrapper">
+    	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="#" class="simple-text">
                     ซันเวย์คลีนิกทัตกรรม
@@ -48,15 +48,15 @@ error_reporting(0);
 
             <ul class="nav">
                <li <?php if($_GET['menu']=='app'){ echo 'class="active"'; } ?>>
-                    <a href="doc_index.php?menu=app">
+                    <a href="user_index.php?menu=app">
                         <i class="pe-7s-user"></i>
                         <p>ข้อมูลนัดหมาย</p>
                     </a>
                 </li>
                
-                
+				
             </ul>
-        </div>
+    	</div>
     </div>
 
     <div class="main-panel">
@@ -80,7 +80,7 @@ error_reporting(0);
                                 <p>Log out</p>
                             </a>
                         </li>
-                        <li class="separator hidden-lg hidden-md"></li>
+						<li class="separator hidden-lg hidden-md"></li>
                     </ul>
                 </div>
             </div>
@@ -93,7 +93,7 @@ error_reporting(0);
                 </div>
 <?php
 if($_GET['menu']=='app'){
-    include('doc_show_app.php');
+    include('user_show_app.php');
 }
 ?>
                         </div>
@@ -118,39 +118,39 @@ if($_GET['menu']=='app'){
 
     <!--   Core JS Files   -->
   <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <!--  Checkbox, Radio & Switch Plugins -->
-    <script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
 
-    <!--  Charts Plugin -->
-    <!-- <script src="assets/js/chartist.min.js"></script> -->
+	<!--  Charts Plugin -->
+	<!-- <script src="assets/js/chartist.min.js"></script> -->
 
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
 
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-    <script src="assets/js/light-bootstrap-dashboard.js"></script>
+	<script src="assets/js/light-bootstrap-dashboard.js"></script>
 
-    <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-    <script src="assets/js/demo.js"></script>
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="assets/js/demo.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function(){
+	<script type="text/javascript">
+    	$(document).ready(function(){
 
-            demo.initChartist();
+        	demo.initChartist();
 
-            $.notify({
-                icon: 'pe-7s-gift',
-                message: "Welcome <b>M</b>"
+        	$.notify({
+            	icon: 'pe-7s-gift',
+            	message: "Welcome <b>M</b>"
 
             },{
                 type: 'info',
                 timer: 4000
             });
 
-        });
-    </script>
+    	});
+	</script>
 
 </html>

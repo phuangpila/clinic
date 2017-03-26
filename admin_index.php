@@ -15,8 +15,7 @@ error_reporting(0);
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-
+ <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
 
@@ -25,7 +24,7 @@ error_reporting(0);
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
+ <link href="assets/css/demo.css" rel="stylesheet" />
 
 
     <!--     Fonts and icons     -->
@@ -60,10 +59,10 @@ error_reporting(0);
                         <p>ข้อมูลพนักงาน</p>
                     </a>
                 </li>
-                <li <?php if($_GET['menu']=='pos'){ echo 'class="active"'; } ?>>
-                    <a href="admin_index.php?menu=pos">
+                <li <?php if($_GET['menu']=='app'){ echo 'class="active"'; } ?>>
+                    <a href="admin_index.php?menu=app">
                         <i class="pe-7s-user"></i>
-                        <p>ข้อมูลตำแหน่ง</p>
+                        <p>ข้อมูลนัดหมาย</p>
                     </a>
                 </li>
                 <li <?php if($_GET['menu']=='income'){ echo 'class="active"'; } ?>>
@@ -144,8 +143,8 @@ if($_GET['menu']=='profile'){
     include('admin_show_profile.php');
 }else if($_GET['menu']=='emp'){
     include('admin_show_emp.php');
-}else if($_GET['menu']=='pos'){
-    include('admin_show_pos.php');
+}else if($_GET['menu']=='app'){
+    include('admin_show_app.php');
 }else if($_GET['menu']=='income'){
     include('admin_show_income.php');
 }else if($_GET['menu']=='bank'){
@@ -180,8 +179,10 @@ if($_GET['menu']=='profile'){
 
 </body>
 
+
+
     <!--   Core JS Files   -->
-    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+  <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->

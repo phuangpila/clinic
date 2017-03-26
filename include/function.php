@@ -137,6 +137,19 @@ function confirmDelete(delUrl) {
    document.location = delUrl;
   }
 }
+
+function confirmAppoint_y(str) {
+  if (confirm("คุณต้องการยืนยันการนัดหรือไม่")) {
+   document.location = str;
+  }
+}
+
+function confirmAppoint_n(str) {
+  if (confirm("คุณต้องยกเลิกการนัดหรือไม่")) {
+   document.location = str;
+  }
+}
+
 </script>
 
 
