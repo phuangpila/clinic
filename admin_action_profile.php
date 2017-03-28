@@ -23,33 +23,17 @@ if($_GET['up']=='1'){
  				<thead>
  					<tr>
  						<td style="text-align:right;">ชื่อ-นามสกุล : </td> 
- 						<td><?php echo $res['name']; ?></td>
+ 						<td><input type="text" name="age" class="form-control" value="<?php echo $res['name']; ?>"></td>
 
  					</tr>
  					<tr>
 						<td>&nbsp;&nbsp;</td>
 						<td>&nbsp;&nbsp;</td>
 					</tr>
-					<tr>
-						<td style="text-align:right;">เลขบัตรปะจำตัวประชาชน : </td>
- 						<td><?php echo $res['num_card']; ?></td>
-					</tr>
-					<tr>
-						<td>&nbsp;&nbsp;</td>
-						<td>&nbsp;&nbsp;</td>
-					</tr>
-					<tr>
- 						<td style="text-align:right;">Username :  </td>
- 						<td><?php echo $res['username']; ?></td>
- 						
- 					</tr>
- 					<tr>
-						<td>&nbsp;&nbsp;</td>
-						<td>&nbsp;&nbsp;</td>
 					</tr>
 					<tr>
  						<td style="text-align:right;">ที่อยู่ : </td>
- 						<td><?php echo $res['address']; ?></td>
+ 						<td><textarea name="address" class="form-control"><?php echo $res['address']; ?></textarea></td>
  						
  					</tr>
  					<tr>
@@ -58,7 +42,7 @@ if($_GET['up']=='1'){
 					</tr>
  					<tr>
  						<td style="text-align:right;">เบอร์โทร : </td>
- 						<td><?php echo $res['tel']; ?></td>
+ 						<td><input type="text" name="age" class="form-control" value="<?php echo $res['tel']; ?>"></td>
  						
  					</tr>
  					<tr>
@@ -66,22 +50,9 @@ if($_GET['up']=='1'){
 						<td>&nbsp;&nbsp;</td>
 					</tr>
 					<tr>
- 						<td style="text-align:right;">เพศ : </td>
- 						<td><?php echo $res['sex']; ?></td>
- 						
+ 						<td style="text-align:right;">รูป : </td>
+ 						<td><input type="file" name="imagee" class="form-control"></td>
  					</tr>
- 					<tr>
-						<td>&nbsp;&nbsp;</td>
-						<td>&nbsp;&nbsp;</td>
-					</tr>
- 					<tr>
- 						<td style="text-align:right;">อายุ : </td>
- 						<td><?php echo $res['age']; ?></td>
- 					</tr>
- 					<tr>
-						<td>&nbsp;&nbsp;</td>
-						<td>&nbsp;&nbsp;</td>
-					</tr>
  					
  				</thead>
  			</table>
