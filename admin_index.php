@@ -101,7 +101,12 @@ error_reporting(0);
                         <p>กระทู้</p>
                     </a>
                 </li>
-				
+				<li <?php if($_GET['menu']=='news'){ echo 'class="active"'; } ?>>
+                    <a href="admin_index.php?menu=news">
+                        <i class="pe-7s-bell"></i>
+                        <p>ข่าวประชาสัมพันธ์</p>
+                    </a>
+                </li>
             </ul>
     	</div>
     </div>
@@ -159,6 +164,8 @@ if($_GET['menu']=='profile'){
     include('admin_show_wb.php');
 }else if($_GET['menu']=='view_topic'){
     include('admin_show_view_topic.php');
+}else if($_GET['menu']=='news'){
+    include('admin_show_news.php');
 }
 ?>
                         </div>

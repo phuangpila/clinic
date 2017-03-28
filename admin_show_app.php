@@ -24,8 +24,8 @@ include('include/function.php');
         <th width="10%" style="text-align:center;">ลำดับที่</th>
         <th width="20%" style="text-align:center;">ชื่อ-นามสกุล ผู้นัด</th>
         <th width="15%" style="text-align:center;">วันเวลาที่นัด</th>
-        <th width="40%" style="text-align:center;">หมายเหตุ</th>
-        <th width="15%" style="text-align:center;">Action</th>
+        <th width="35%" style="text-align:center;">หมายเหตุ</th>
+        <th width="20%" style="text-align:center;">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -44,7 +44,7 @@ while($res=mysql_fetch_array($sql)){
         <?php
         if($res['status']=='0'){
         ?>
-        <a class="btn btn-success btn-md" onclick="confirmAppoint_y('admin_action_app.php?ok=1&app_id=<?php echo $res['id']; ?>')">ยืนยันการนัด</a> <a class="btn btn-danger btn-md" onclick="confirmAppoint_n('admin_action_app.php?no=1&app_id=<?php echo $res['id']; ?>')">ยกเลิกการนัด</a>
+        <a class="btn btn-success btn-sm" onclick="confirmAppoint_y('admin_action_app.php?ok=1&app_id=<?php echo $res['id']; ?>')">ยืนยันการนัด</a> <a class="btn btn-danger btn-sm" onclick="confirmAppoint_n('admin_action_app.php?no=1&app_id=<?php echo $res['id']; ?>')">ยกเลิกการนัด</a>
         <?php }else{ 
           if($res['status']=='1'){
             echo "<p class='text-success'>ยืนยันการนัดแล้ว</p>";

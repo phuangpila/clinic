@@ -103,6 +103,7 @@ function Date_Mouth_Shot($str)
   }
   function Date_Mouth_Shot_Time($str)
   {
+    $t="เวลา";
     $strYear = date("Y",strtotime($str))+543;
     $strMonth= date("n",strtotime($str));
     $strDay= date("j",strtotime($str));
@@ -111,7 +112,21 @@ function Date_Mouth_Shot($str)
     $strSeconds= date("s",strtotime($str));
     $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
     $strMonthThai=$strMonthCut[$strMonth];
-    return "$strDay $strMonthThai $strYear,$strHour:$strMinute:$strSeconds";
+    return "$strDay $strMonthThai $strYear,$t $strHour:$strMinute:$strSeconds น.";
+  }
+
+    function Date_Mouth_Long_Time($str)
+  {
+    $t="เวลา";
+    $strYear = date("Y",strtotime($str))+543;
+    $strMonth= date("n",strtotime($str));
+    $strDay= date("j",strtotime($str));
+    $strHour= date("H",strtotime($str));
+    $strMinute= date("i",strtotime($str));
+    $strSeconds= date("s",strtotime($str));
+    $strMonthCut = Array("","มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม");
+    $strMonthThai=$strMonthCut[$strMonth];
+    return "วันที่ $strDay $strMonthThai $strYear,$t $strHour:$strMinute:$strSeconds น.";
   }
   
 
