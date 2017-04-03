@@ -66,20 +66,12 @@ error_reporting(0);
                         <p>ข้อมูลประเภทการรักษา</p>
                     </a>
                 </li>
-
-                <li <?php if($_GET['menu']=='pre'){ echo 'class="active" '; } ?>>
-                    <a  href="emp_index.php?menu=pre">
-                        <i class="pe-7s-user"></i>
-                        <p>คำนำหน้าชื่อ</p>
-                    </a>
-                </li>
-
-                <li <?php if($_GET['menu']=='list'){ echo 'class="active"'; } ?>>
-                    <a href="emp_index.php?menu=list">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>รายการที่ทำการรักษา</p>
-                    </a>
-                </li>
+               <!--  <li <?php if($_GET['menu']=='list'){ echo 'class="active"'; } ?>>
+                   <a href="emp_index.php?menu=list">
+                       <i class="pe-7s-map-marker"></i>
+                       <p>รายการที่ทำการรักษา</p>
+                   </a>
+               </li> -->
                 <li <?php if($_GET['menu']=='ser'){ echo 'class="active"'; } ?>>
                     <a href="emp_index.php?menu=ser">
                         <i class="pe-7s-science"></i>

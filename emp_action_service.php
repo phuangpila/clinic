@@ -8,7 +8,7 @@ if ($_POST['in'] == '0') {
   "type_id"=>$_POST["type_id"],
   "lose_d"=>$_POST["lose_d"],
   "sick"=>$_POST["sick"],
-  "date_appoint"=>$_POST["date_appoint"],
+
 );
 insert("treatment",$data);
  header('refresh : 0.1; emp_index.php?menu=ser');
@@ -18,11 +18,11 @@ insert("treatment",$data);
 
   $query_rank2 = mysql_query("select * from treatment where id = '".$_GET['idrank']."'");
   $res_rank2 = mysql_fetch_array($query_rank2);
-  $date = date("Y-m-d H:i:s");
+  $date = date("Y-m-d");
 
-  if ($res_rank2['date_treat'] == '0000-00-00 00:00:00') {
+  if ($res_rank2['date_appoint'] == '0000-00-00') {
       $rank_total = $res_rank['total']+1;
-    $update = "update treatment set rank = '".$rank_total."' ,date_treat = '".$date."' where id = '".$_GET['idrank']."'";
+    $update = "update treatment set rank = '".$rank_total."' ,date_appoint = '".$date."' where id = '".$_GET['idrank']."'";
     //echo $update;
      mysql_query($update);
      header('refresh : 0.1; emp_index.php?menu=ser');
@@ -33,7 +33,7 @@ insert("treatment",$data);
   "type_id"=>$_POST["type_id"],
   "lose_d"=>$_POST["lose_d"],
   "sick"=>$_POST["sick"],
-  "date_appoint"=>$_POST["date_appoint"],
+
 );
 update("treatment",$data,"id = '".$_POST["id_up"]."' ");
 header('refresh : 0.1; emp_index.php?menu=ser');  
@@ -107,11 +107,6 @@ if($_GET['insert']=='1'){
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
-      <tr>
-        <td align="right">วันที่มารักษา :</td>
-        <td><input type="date" name="date_appoint" id="date_appoint" class="form-control"></td>
-      </tr>
-     
     </table>
   </div>
   <div class="modal-footer">
@@ -192,10 +187,6 @@ if($_GET['insert']=='1'){
         <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td align="right">วันที่มารักษา :</td>
-        <td><input type="date" name="date_appoint" id="date_appoint" class="form-control" value="<?php echo $res_edit['date_appoint']; ?>"></td>
       </tr>
      
     </table>

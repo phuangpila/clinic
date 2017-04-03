@@ -38,9 +38,9 @@ include('include/function.php');
       <tr>
       		<td><?php echo $i; ?></td>
       		<td><?php echo '00'.$res['id']; ?></td>
-         <?php if ($res['date_treat'] == '0000-00-00 00:00:00') { ?>
+         <?php if ($res['date_appoint'] == '0000-00-00') { ?>
            <td><?php echo '-' ?></td>
-           <?php }else if ($res['date_treat'] != '0000-00-00 00:00:00') { ?>
+           <?php }else if ($res['date_appoint'] != '0000-00-00') { ?>
                    <td><?php echo $res['rank']; ?></td>
          <?php } ?> 
       		<td><?php echo $res_u['name']; ?></td>
@@ -75,11 +75,7 @@ include('include/function.php');
             <a href="#"   data-toggle="modal"  data-target="#myModalin" class="btn btn-default btn-xs" disabled >ค่าใช้จ่าย</a>
             <?php } ?>
 
-             <?php if ($res['status_sick'] == '0') { ?>
 				<a href="emp_action_service_appoint.php?appoint=1&idappoint=<?php echo $res['id']; ?>"   data-toggle="modal"  data-target="#myModalin" class="btn btn-danger btn-xs" >นัดหมาย</a> 
-         <?php }elseif ($res['status_sick '] != '0') { ?>
-          <a href="#"   data-toggle="modal"  data-target="#myModalin" class="btn btn-default btn-xs" disabled >นัดหมาย</a>
-         <?php } ?>      
 	        </td>	       
       </tr>
       <?php $i++;} ?>
