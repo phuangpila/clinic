@@ -32,9 +32,15 @@ if($_GET['insert']=='1'){
    $res_u=mysql_fetch_array($sql_u);
    echo "โดย : ".$res_u['name'];
    ?></p>
-    <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="creload();">ปิด</button>
   </div>
 
 <?php
 }
 ?>
+<script>
+  function creload(){
+    window.location.reload('index.php');
+  }
+
+</script>
