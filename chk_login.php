@@ -18,26 +18,26 @@ $strSql = "SELECT * FROM user WHERE username='".$user_name."' AND pass_word='".$
 			 $_SESSION["user_name"] = $row['user_name'];
 
 		if($row['status']=='1'){
-		    	header("refresh:0.5; admin_index.php" );
+		    	header("refresh:0.5; admin/admin_index.php" );
 				exit();
 		}else if($row['status']=='2'){
-		    	header("refresh:0.5; doc_index.php" );
+		    	header("refresh:0.5; doc/doc_index.php" );
 				exit();
 		}else if($row['status']=='3'){
-		    	header("refresh:0.5; emp_index.php" );
+		    	header("refresh:0.5; emp/emp_index.php" );
 				exit();
 		}else if($row['status']=='4'){
-		    	header("refresh:0.5; user_index.php" );
+		    	header("refresh:0.5; user/user_index.php" );
 				exit();
 				}
 		}else{
 			imgLoading("Username หรือ Password อาจจะผิดกรุณา Login ใหม่อีกครั้ง...");
-		header("refresh:2; login.php" );
+		header("refresh:2; index.php" );
 		exit();
 		}
 }else{
 	imgLoading("กรุณาใส่ Username หรือ Password ในการ Login...");
-		header("refresh:2; login.php" );
+		header("refresh:2; index.php" );
 		exit();
 }
 
